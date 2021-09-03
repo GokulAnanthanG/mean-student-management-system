@@ -1,0 +1,114 @@
+<mat-toolbar class="toolBar">
+<div>
+  <h2>&nbsp;
+    <mat-icon class="topIcon">fact_check</mat-icon> Add Mark 
+  </h2>
+</div>
+<div class="second">
+  
+  <button mat-icon-button matTooltip="View Mark" routerLink="/viewMark"><mat-icon class="topIcon">visibility</mat-icon></button>
+ 
+</div>
+</mat-toolbar>
+
+<mat-card>
+  <mat-card-content>
+    <form #markForm="ngForm">
+
+      <mat-grid-list cols="6" rowHeight="100px">
+
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Student Registration No</mat-label>
+             <input (keyup)=onKey($event) matInput required  type="text" name="regNo" [(ngModel)]="regNo">
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Student Name</mat-label>
+            <input required  matInput type="text" name="StudentName" [(ngModel)]="name">
+          </mat-form-field>
+        </mat-grid-tile>
+  
+
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Department</mat-label>
+            <mat-select  required  name="department" [(ngModel)]=" department">
+              <mat-option value="BCA">BCA</mat-option>
+              <mat-option value="BSC(IT)">BSc(IT)</mat-option>
+              <mat-option value="BSc(Maths)">BSc(Maths)</mat-option>
+              <mat-option value="BBA">BBA</mat-option>
+              <mat-option value="B.Com">B.Com</mat-option>
+              <mat-option value="M.Com">M.Com</mat-option>
+
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Semester</mat-label>
+            <mat-select (selectionChange)=getSub($event) required ngModel name="semester">
+              <mat-option value="I">I</mat-option>
+              <mat-option value=" II "> II</mat-option>
+              <mat-option value="III">III</mat-option>
+              <mat-option value="IV">IV</mat-option>
+              <mat-option value="V">V</mat-option>
+              <mat-option value="VI">VI</mat-option>
+              </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+       
+
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Exam Type</mat-label>
+            <input required ngModel matInput type="text" name="examType" id="">
+          </mat-form-field>
+        </mat-grid-tile>
+
+
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Date</mat-label>
+            <input required ngModel matInput type="date" name="date" id="">
+          </mat-form-field>
+        </mat-grid-tile>
+
+      </mat-grid-list>
+    </form>
+    
+      <form   (ngSubmit)="fromSubmit(markForm,markOnlyForm)"  #markOnlyForm="ngForm">
+
+      <mat-grid-list cols="2" rowHeight="100px" *ngFor="let loop of loop;let i = index">
+
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+          <mat-label>subject {{i+1}}</mat-label>
+             <input readonly   matInput   value="{{loop}}" type="text"   >
+          </mat-form-field>
+        </mat-grid-tile>
+
+
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Mark</mat-label>
+            <input  matInput type="text" name="SubjectMark{{i}}" id="" ngModel>
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <button [disabled]="!markForm.valid" color="primary" mat-raised-button>Submit</button>
+    </form>
+
+
+    <br><br><br>
+    <!--footer-->
+  </mat-card-content>
+</mat-card>
+
+<br>
+<!--footer-->
+
+<br> &nbsp;
+<p class="Footer" align="center">&copy; SSB 2021</p>

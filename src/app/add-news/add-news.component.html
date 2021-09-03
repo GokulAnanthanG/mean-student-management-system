@@ -1,0 +1,231 @@
+<h2>
+    <mat-icon class="topIcon">article</mat-icon> Add School message
+</h2>
+<mat-card>
+  <mat-card-content>
+    <form #messaage="ngForm"  >
+<mat-form-field appearance="outline">
+    <mat-label>Enter School Message</mat-label>
+  <textarea matInput  [(ngModel)]="message" id="" name="message" cols="70" rows="10"></textarea>
+</mat-form-field><br>
+ <button type="button" mat-button matTooltip="Choose image for the post"><label for="staffImage"><mat-icon>upload_file</mat-icon> {{fileName}}</label></button>
+ 
+<input hidden (change)="fileChanged($event)"   ngModel type="file" name="staffImage" id="staffImage">
+ <br>
+<button type="submit" (click)="addMessage(messaage)"  mat-raised-button>  <mat-icon>send</mat-icon></button>
+</form>
+<br>
+<div class="messageContainer">
+    <h2>
+        Messages
+    </h2>  
+    <div *ngFor="let data of array">
+      <mat-grid-list cols="3" rowHeight="150px">
+      <mat-grid-tile><img width="150px" height="100px" [src]="sanitizer.bypassSecurityTrustUrl(data.postImage)" alt=""></mat-grid-tile>
+      <mat-grid-tile><p align="justify">{{data.message}}</p></mat-grid-tile>
+      <mat-grid-tile><button matTooltip="delete delete_forever" mat-button color="warn" (click)="deleteMessage(data._id)"><mat-icon>delete_forever</mat-icon></button></mat-grid-tile>
+      </mat-grid-list>
+     </div>
+</div>
+
+<br>
+<mat-divider></mat-divider><br>
+     <h2>
+         Add Exam
+    </h2>  
+    <form #examForm="ngForm" (ngSubmit)="addExam(examForm)">
+  <mat-grid-list cols="3" rowHeight="100px">
+    <mat-grid-tile>
+        <mat-form-field appearance="outline">
+            <mat-label>Exam Type</mat-label>
+            <input required ngModel matInput type="text" name="examType" id="">
+        </mat-form-field>
+      </mat-grid-tile> 
+    <mat-grid-tile>
+        <mat-form-field appearance="outline">
+            <mat-label>Exam Date</mat-label>
+            <input required ngModel matInput type="date" name="date" id="">
+        </mat-form-field>
+      </mat-grid-tile> 
+    
+      <mat-grid-tile>
+        <mat-form-field appearance="outline" >
+          <mat-label>Department</mat-label>
+          <mat-select  required ngModel name="department">
+            <mat-option value="BCA">BCA</mat-option>
+            <mat-option value="BSC(IT)">BSc(IT)</mat-option>
+            <mat-option value="BSC(Maths)">BSc(Maths)</mat-option>
+            <mat-option value="BBA">BBA</mat-option>
+            <mat-option value="B.Com">B.Com</mat-option>
+            <mat-option value="M.Com">M.Com</mat-option>
+            
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>  
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline" >
+          <mat-label>Section</mat-label>
+          <mat-select  required ngModel name="section">
+            <mat-option value="I">I</mat-option>
+            <mat-option value="II">II</mat-option>
+             <mat-option value="III">III</mat-option>
+
+              
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline" >
+          <mat-label>Session</mat-label>
+          <mat-select  required ngModel name="session">
+            <mat-option value="FN">FN</mat-option>
+            <mat-option value="AN">AN</mat-option>
+              
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline" >
+          <mat-label>Hall No</mat-label>
+          <mat-select  required ngModel name="hallNo">
+            <mat-option value="1">1</mat-option>
+            <mat-option value="2">2</mat-option>
+            <mat-option value="3">3</mat-option>
+            <mat-option value="4">4</mat-option>
+            <mat-option value="5">5</mat-option>
+            <mat-option value="6">6</mat-option>
+            <mat-option value="7">7</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile></mat-grid-tile>
+      <mat-grid-tile></mat-grid-tile>
+      
+
+<mat-grid-tile>
+<button [disabled]="!examForm.valid" color="primary" mat-raised-button>Add Exam</button>
+</mat-grid-tile>
+    </mat-grid-list>
+  </form>
+
+  <div class="messageContainer">
+    <h2>
+        Exams
+    </h2>  
+    <div *ngFor="let data2 of allExams">
+      <mat-grid-list cols="7" rowHeight="150px">
+       
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+              <mat-label>Exam Type</mat-label>
+              <input readonly     matInput value="{{data2.examType}}" type="text" name="examType" id="">
+          </mat-form-field>
+        </mat-grid-tile> 
+      <mat-grid-tile>
+          <mat-form-field appearance="outline">
+              <mat-label>Exam Date</mat-label>
+              <input readonly     matInput value="{{data2.date}}" type="datetime" name="date" id="">
+          </mat-form-field>
+        </mat-grid-tile> 
+      
+        <mat-grid-tile>
+          <mat-form-field appearance="outline"  >
+            <mat-label>Department</mat-label>
+            <mat-select  value="{{data2.department}}"    name="department">
+              <mat-option value="BCA">BCA</mat-option>
+              <mat-option value="BSC(IT)">BSc(IT)</mat-option>
+              <mat-option value="BSC(Maths)">BSc(Maths)</mat-option>
+              <mat-option value="BBA">BBA</mat-option>
+              <mat-option value="B.Com">B.Com</mat-option>
+              <mat-option value="M.Com">M.Com</mat-option>
+              
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>  
+  
+        <mat-grid-tile>
+          <mat-form-field appearance="outline" >
+            <mat-label>Section</mat-label>
+            <mat-select value="{{data2.section}}"     name="department">
+              <mat-option value="I">I</mat-option>
+              <mat-option value="II">II</mat-option>
+               <mat-option value="III">III</mat-option>
+  
+                
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+  
+        <mat-grid-tile>
+          <mat-form-field appearance="outline" >
+            <mat-label>Session</mat-label>
+            <mat-select value="{{data2.session}}"     name="session">
+              <mat-option value="FN">FN</mat-option>
+              <mat-option value="AN">AN</mat-option>
+                
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+  
+  
+        <mat-grid-tile>
+          <mat-form-field appearance="outline" >
+            <mat-label>Hall No</mat-label>
+            <mat-select value="{{data2.hallNo}}"     name="hallNo">
+              <mat-option value="1">1</mat-option>
+              <mat-option value="2">2</mat-option>
+              <mat-option value="3">3</mat-option>
+              <mat-option value="4">4</mat-option>
+              <mat-option value="5">5</mat-option>
+              <mat-option value="6">6</mat-option>
+              <mat-option value="7">7</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+  
+         
+        
+  
+  <mat-grid-tile>
+  <button  color="warn" matTooltip="delete delete_forever" (click)="deleteExam(data2._id)" mat-button><mat-icon>delete_forever</mat-icon> </button>
+  </mat-grid-tile>
+
+
+      </mat-grid-list>
+     </div>
+</div>
+    <br><mat-divider></mat-divider><br>
+    <h2>
+        <mat-icon class="topIcon">forum</mat-icon> Comments
+    </h2>
+
+    <mat-form-field appearance="outline" class="commentBox">
+      <mat-label>Add Comment</mat-label>
+    <textarea matInput [(ngModel)]="comment" id="" cols="70" rows="5"></textarea>
+  </mat-form-field><br>
+  <button (click)="addComment()"  mat-raised-button>  <mat-icon>send</mat-icon></button>
+  <div class="messageContainer">
+    <h2>
+        Comment
+    </h2>  
+    <div *ngFor="let data of allComments">
+      <mat-grid-list cols="4" rowHeight="150px">
+      <mat-grid-tile><div [ngClass]="{ 'student':true}"><p matTooltip="{{data.position}}" align="center">{{data.name}}<br>{{find(data.department)}}</p></div></mat-grid-tile>
+      <mat-grid-tile><p matTooltip="comment" align="justify"  class="comment">{{data.comment}}</p></mat-grid-tile>
+     <mat-grid-tile><i matTooltip="When the comment Added" align='center'>{{data.time}}</i></mat-grid-tile>
+      <mat-grid-tile><button matTooltip="delete delete_forever" mat-button color="warn" (click)="deleteComment(data._id)"><mat-icon>delete_forever</mat-icon></button></mat-grid-tile>
+      </mat-grid-list>
+     </div>
+ 
+</div>
+ 
+    <!--footer-->
+    </mat-card-content>
+</mat-card>
+<br> &nbsp;
+<p class="Footer" align="center">&copy; SSB 2021</p>

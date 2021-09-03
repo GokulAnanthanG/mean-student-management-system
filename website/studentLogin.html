@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">      
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+    <style>
+        body{
+            font-family: 'Poppins', sans-serif;
+  
+        }
+        h2{
+           font-family: 'Times New Roman', Times, serif;
+             }
+             .wrapper{
+                 width: 500px;
+                 height: 500px;
+                 margin:auto;
+             }
+             button{
+                 width: 100%;
+                 
+             }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Benne&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body><center>
+    <br><br>
+    <img src="http://ssbcollege.edu.in/assets/images/logo.png" alt="">
+</center><br><br>
+    <h2 align="center">Student Login</h2>
+ <div class="wrapper">
+    <div class="form-group">
+        <label for="">Reg No</label>
+        <input class="form-control" type="text" name="" id="inp1">
+    </div>
+    <div class="form-group">
+        <label for="">Password</label>
+        <input class="form-control" type="password" name="" id="inp2">
+    </div>
+    <div class="form-group">
+         
+       <button class="btn btn-info">Login</button>
+    </div>
+ 
+</div><!--warpper-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>           
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script>
+   $(document).ready(function(){
+        $('button').click(()=>{
+           var inp1=$("#inp1").val();
+           var inp2=$("#inp2").val();
+
+           if(String(inp1).length>1&&String(inp2).length>1){
+      var dataObj={
+          regNo:String(inp1),
+          pass:String(inp2)
+      }
+            $.ajax({
+           type:"post",
+           url:'http://localhost:3000/studentLogin',
+           data:dataObj,
+           success:function(data){
+           if(data.message=="find"){
+               alert("LogedIn")
+               console.log(data)
+               localStorage.setItem('studentName',data.data.name)
+               localStorage.setItem('studentDepartment',data.data.department)
+               localStorage.setItem('studentRegNo',data.data.regNo)
+               localStorage.setItem('studentAccessToken',data.token)
+               localStorage.setItem('loginStatus','true')
+
+               window.location="studentHome.html"
+           }
+           else{
+               alert("Invalid")
+           }
+           },
+           error:function(xhr){
+               alert("Something went wrong")
+console.error(xhr)
+           }
+       })
+
+//ajax
+
+           }
+           else{
+alert("invalid")
+           }//else
+
+        })
+   })
+</script>
+
+  
+</body>
+</html>

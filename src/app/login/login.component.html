@@ -1,0 +1,22 @@
+ <form #formData="ngForm" (ngSubmit)="formSubmit(formData)">
+ <div class="flex">
+      <div class="box1"> <img width="700px" height="500px" src="assets/login.svg" alt=""></div>
+      <div class="box2">
+          <h2 align="center"><span>A</span>dmin <span>L</span>ogin</h2>
+          <mat-form-field appearance="outline">
+              <mat-label>User Name</mat-label>
+              <input required matInput ngModel type="text" name="userName" id="">
+          </mat-form-field>
+          <br><br>
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input required matInput ngModel type="password" name="password" id="">
+        </mat-form-field><br>
+        <button type="submit" [disabled]="!formData.valid" mat-raised-button>Login</button>
+      </div>
+  </div>
+</form>
+
+  <!--footer-->
+  <br> &nbsp;
+  <p class="Footer" align="center">&copy; SSB 2021</p>

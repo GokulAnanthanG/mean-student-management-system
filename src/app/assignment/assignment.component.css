@@ -1,0 +1,38 @@
+h2{
+    font-family: 'Roboto Slab', serif;
+}
+label{
+    font-size: 20px;
+    color: rgb(66, 17, 180);
+}
+ 
+.title{
+    width: 300px;  
+ }
+ .text1area{
+     width: 300px;
+ }
+ 
+.messageContainer{
+    padding: 10px;
+    min-height: 300px; 
+    background-color: rgb(241, 234, 243);
+  }
+  .data-warpper{
+      margin-top: 10px;
+      background-color: white;
+  }
+
+  .textarea{
+      border:1px solid rgba(22, 22, 243, 0.534);
+      font-family: 'Times New Roman', Times, serif;
+      outline: none;
+  }
+  iframe{
+    width: 100%;
+    height: 300px;
+  }
+   
+
+
+  

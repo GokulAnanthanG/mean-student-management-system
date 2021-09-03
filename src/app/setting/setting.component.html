@@ -1,0 +1,39 @@
+<h2>
+    <mat-icon class="topIcon">settings</mat-icon> Add Student
+</h2>
+<mat-card>
+    <mat-card-content>
+<div class="container">
+    <h2>
+        <mat-icon class="topIcon">edit</mat-icon> Reset the password
+    </h2>
+    <form #updatePassValue="ngForm" (ngSubmit)="updatePass(updatePassValue)">
+    <mat-form-field  appearance="outline">
+        <mat-label>Enter the Admin Email</mat-label>
+        <input required ngModel name="name" matInput type="text">
+    </mat-form-field>
+    <mat-form-field  appearance="outline">
+        <mat-label>Enter the Password</mat-label>
+        <input required ngModel name="pass" matInput type="password">
+    </mat-form-field>
+    <mat-form-field  appearance="outline">
+        <mat-label>Enter the New Password</mat-label>
+        <input required ngModel name="newPass" matInput type="password">
+    </mat-form-field>
+    <mat-form-field  appearance="outline">
+        <mat-label>Enter the Secret key</mat-label>
+        <input  required ngModel name="sKey" matInput type="password">
+    </mat-form-field>
+    <button type="submit" mat-raised-button>Update</button>
+</form>
+
+</div>
+ 
+
+ 
+<br><br><br><br><br><br><br><br><br>
+<!--footer-->
+    </mat-card-content>
+    </mat-card>
+    <br> &nbsp;
+    <p class="Footer" align="center">&copy; SSB 2021</p>

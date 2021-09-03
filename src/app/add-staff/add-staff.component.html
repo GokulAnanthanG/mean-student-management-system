@@ -1,0 +1,147 @@
+<h2>
+    <mat-icon class="topIcon">person_add_alt</mat-icon> Add Staff
+</h2>
+<mat-card>
+  <mat-card-content>
+  <mat-grid-list cols="3" rowHeight="100px">
+    <form (ngSubmit)="fromSubmit(staffForm)" #staffForm="ngForm">
+      <mat-grid-tile >
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input autocomplete="off" required ngModel matInput type="text" name="name" id="">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+         <button type="button" mat-button matTooltip="Choose the staff image"><label for="staffImage"><mat-icon>upload_file</mat-icon>{{fileName}}</label></button>
+        
+         <input  autocomplete="off" hidden (change)="imgUpload($event)"   ngModel type="file" name="staffImage" id="staffImage">
+  
+       </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input  autocomplete="off" required ngModel matInput type="text" name="password" id="">
+        </mat-form-field>
+      </mat-grid-tile>
+    
+      <mat-grid-tile>
+        <mat-form-field appearance="outline" >
+            <mat-label>Gender</mat-label>
+            <mat-select  autocomplete="off" required ngModel name="gender">
+              <mat-option value="Male">Male</mat-option>
+              <mat-option value="Female">Female</mat-option>
+            </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile >
+        <mat-form-field appearance="outline">
+            <mat-label>D.O.B</mat-label>
+            <input  autocomplete="off" required ngModel matInput type="date" name="dob" id="">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+            <mat-label>Phone No</mat-label>
+            <input  autocomplete="off" required ngModel matInput type="phoneNo" name="phoneNo" id="">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+            <mat-label>Position</mat-label>
+            <mat-select  autocomplete="off"   (selectionChange)="onChange($event)" required ngModel name="Position">
+            <mat-option value="Teaching Staff">Teaching Staff</mat-option>
+            <mat-option value="Non-Teaching">Non-Teaching Staff</mat-option>
+            <mat-option value="Office Staff">Office Staff</mat-option>
+            <mat-option value="Lab-Assitance">Lab-Assistance</mat-option>
+            </mat-select>
+            </mat-form-field>
+  
+      </mat-grid-tile>
+
+      <mat-grid-tile >
+        <mat-form-field appearance="outline">
+          <mat-label>Blood Group</mat-label>
+          <mat-select  autocomplete="off" required ngModel name="bloodGroup">
+            <mat-option value="A+">A+</mat-option>
+            <mat-option value="A-">A-</mat-option>
+            <mat-option value="B+">B+</mat-option>
+            <mat-option value="B-">B-</mat-option>
+            <mat-option value="AB+">AB+</mat-option>
+            <mat-option value="AB-">AB-</mat-option>
+            <mat-option value="O+">O+</mat-option>
+            <mat-option value="O-">O-</mat-option>
+          </mat-select>
+      </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile >
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input  autocomplete="off" required ngModel matInput type="email" name="email" id="">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+            <mat-label>Pin Code</mat-label>
+            <input  autocomplete="off" required ngModel matInput type="text" name="pincode" id="">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Address</mat-label>
+         <textarea  autocomplete="off" ngModel required matInput name="address" id="" cols="2" rows="2"></textarea>
+      </mat-form-field>       </mat-grid-tile>
+      
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline" *ngIf="hiddeBox">
+          <mat-label>Handling Department</mat-label>
+          <mat-select  autocomplete="off"  required ngModel name="department">
+            <mat-option value="BCA">BCA</mat-option>
+            <mat-option value="BSC(IT)">BSc(IT)</mat-option>
+            <mat-option value="BSC(Maths)">BSc(Maths)</mat-option>
+            <mat-option value="BBA">BBA</mat-option>
+            <mat-option value="B.Com">B.Com</mat-option>
+            <mat-option value="M.Com">M.Com</mat-option>
+            
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field  appearance="outline">
+            <mat-label>City</mat-label>
+            <input  autocomplete="off" required ngModel matInput type="text" name="city" id="">
+        </mat-form-field>
+      </mat-grid-tile>
+       
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+            <mat-label>Joined Year</mat-label>
+            <input  autocomplete="off" required ngModel matInput type="text"  value="20" name="joinedYear" id="">
+        </mat-form-field>
+      </mat-grid-tile>
+
+     
+       
+    
+       
+    <mat-grid-tile> 
+         <button [disabled]="!staffForm.valid" color="primary" mat-raised-button>Submit</button>
+    </mat-grid-tile>
+      
+  </form>
+
+  </mat-grid-list>
+ </mat-card-content>
+ </mat-card><br>
+ <!--footer-->
+ 
+ <<br> &nbsp;
+ <p class="Footer" align="center">&copy; SSB 2021</p>

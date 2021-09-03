@@ -1,0 +1,15 @@
+mat-dialog-content{
+    width: 900px;
+    height: 1000px;
+    overflow: auto;
+}
+.saveBtn{
+    background-color: rgba(32, 202, 32, 0.76);
+    color: white;
+    width: 90px;
+}
+ .cancelBtn{
+    background-color: rgba(211, 68, 68, 0.829);
+    color: white;
+    width: 90px;
+}

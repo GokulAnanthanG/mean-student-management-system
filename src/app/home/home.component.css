@@ -1,0 +1,44 @@
+ @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+ .imgContainer{
+    width: 400px;
+    height: 300px;
+    margin: auto;
+ }
+ 
+h1{color:rgba(0, 0, 0, 0.836);
+    text-align: center;
+    width: 400px;
+    height: 50px;
+    padding-top: 15px;
+    border-radius: 5px;
+  box-shadow: -7px 13px 9px -6px rgba(0,0,0,0.54);
+-webkit-box-shadow: -7px 13px 9px -6px rgba(0,0,0,0.54);
+-moz-box-shadow: -7px 13px 9px -6px rgba(0,0,0,0.54);
+}
+span:nth-child(1){
+    color: #fc2904;
+ }
+span:nth-child(2){
+    color: greenyellow;
+    font-weight: 300;
+}
+span:nth-child(3){
+    color: purple;
+}
+span:nth-child(4){
+    color: rgb(228, 207, 23);
+}
+img{
+    border-radius: 5px;
+}
+h1{
+    font-family: 'Anton', sans-serif;
+}
+   
+ mat-card{
+    margin-top: 70px;
+ }
+.chart{
+    display: flex;
+ }
+

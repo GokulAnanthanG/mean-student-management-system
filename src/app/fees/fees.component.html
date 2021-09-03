@@ -1,0 +1,121 @@
+<mat-card>
+    <mat-card-content>
+             <div>
+              <h2>&nbsp;
+                <mat-icon class="topIcon">payments</mat-icon> Manage Fees 
+              </h2>
+            </div>
+            
+             
+            <mat-form-field appearance="outline">
+                <mat-label>Enter Student Registration No</mat-label>
+                <input  (keyup)="onKey($event)"  matInput   autocomplete="off"  type="text"  >
+            </mat-form-field>
+            <button (click)="viewAll()" mat-icon-button  matTooltip="view all students">  <mat-icon>arrow_drop_down</mat-icon></button>
+            
+               <div class="wrapper" *ngFor="let data of array">
+            
+                  <mat-grid-list cols="4" rowHeight="100px">
+            
+                    <mat-grid-tile>
+                      <mat-form-field appearance="outline">
+                        <mat-label>Student Registration No</mat-label>
+                         <input readonly value="{{data.regNo}}"   matInput    type="text"  >
+                      </mat-form-field>
+                    </mat-grid-tile>
+            
+                    <mat-grid-tile>
+                      <mat-form-field appearance="outline">
+                        <mat-label>Student Name</mat-label>
+                        <input readonly value="{{data.name}}"   matInput type="text"  >
+                      </mat-form-field>
+                    </mat-grid-tile>
+              
+            
+                    <mat-grid-tile>
+                      <mat-form-field appearance="outline">
+                        <mat-label>Department</mat-label>
+                        <mat-select readonly value="{{data.department}}"    name="department"  >
+                          <mat-option value="BCA">BCA</mat-option>
+                          <mat-option value="BSC(IT)">BSc(IT)</mat-option>
+                          <mat-option value="BSc(Maths)">BSc(Maths)</mat-option>
+                          <mat-option value="BBA">BBA</mat-option>
+                          <mat-option value="B.Com">B.Com</mat-option>
+                          <mat-option value="M.Com">M.Com</mat-option>
+            
+                        </mat-select>
+                      </mat-form-field>
+                    </mat-grid-tile>
+                    
+            
+                    
+            
+                    <mat-grid-tile>
+                      <mat-form-field appearance="outline">
+                        <mat-label>Updated In</mat-label>
+                        <input readonly  value="{{data.feesEnteryUpdatedDay}}"  matInput type="date" name="date" id="">
+                      </mat-form-field>
+                    </mat-grid-tile>
+            
+                  </mat-grid-list>
+                  <mat-grid-list cols="2" rowHeight="100px">
+                    <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                          <mat-label>Sem 1 Fees Payed</mat-label>
+                          <input readonly value="{{data.sem1fees}}"   matInput type="text">
+                        </mat-form-field>
+                      </mat-grid-tile>
+
+                      <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                          <mat-label>Sem 2 Fees payed</mat-label>
+                          <input readonly value="{{data.sem2fees}}"   matInput type="text">
+                        </mat-form-field>
+                      </mat-grid-tile>
+                      <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                          <mat-label>Sem 3 Fees payed</mat-label>
+                          <input readonly value="{{data.sem3fees}}"  matInput type="text">
+                        </mat-form-field>
+                      </mat-grid-tile>
+
+
+                      <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                          <mat-label>Sem 4 Fees payed</mat-label>
+                          <input readonly value="{{data.sem4fees}}"  matInput type="text">
+                        </mat-form-field>
+                      </mat-grid-tile>
+
+                      <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                          <mat-label>Sem 5 Fees payed</mat-label>
+                          <input readonly value="{{data.sem5fees}}"  matInput type="text">
+                        </mat-form-field>
+                      </mat-grid-tile>
+
+
+                      <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                          <mat-label>Sem 6 Fees payed</mat-label>
+                          <input readonly value="{{data.sem6fees}}"   matInput type="text">
+                        </mat-form-field>
+                      </mat-grid-tile>
+
+                      <mat-grid-tile>
+                         
+                      </mat-grid-tile>
+
+
+                      <mat-grid-tile>
+                        <button matTooltip="Edit" mat-button color="primary" (click)="edit(data._id)"><mat-icon>edit</mat-icon></button>
+                      </mat-grid-tile>
+
+</mat-grid-list>
+     
+</div> 
+                
+    </mat-card-content>
+</mat-card>
+<br> &nbsp;
+<p class="Footer" align="center">&copy; SSB 2021</p>

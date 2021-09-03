@@ -1,0 +1,39 @@
+mat-toolbar{
+    background-color: #A64AC9;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+ }
+.right{
+    margin-left: auto;
+}
+mat-sidenav-container{
+    height: 100%;
+ }
+mat-sidenav-content{
+    background-color: white;
+    color: black;
+
+}
+mat-sidenav{
+    width: 300px;
+    max-height:690px;
+    overflow: auto;
+    padding: 27px;
+    background-color: #FCCD04;
+color: white;
+}
+.navbutton{
+    margin-left: 93px;
+}
+.container{
+   padding: 30px;
+}
+
+h2{
+    font-family: 'Roboto Slab', serif;
+}
+.spinner{
+    width: 300px;
+    height: 100px;
+    margin: auto;
+}

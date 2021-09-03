@@ -1,0 +1,39 @@
+
+<div class="imgContainer">
+   <h1 align="center"><span>S <span style="color: orange;">S</span> B </span> <span>A</span>rts & <span>S</span>cienec <span>C</span>ollege</h1>
+ <br><br><br>  <img src="http://ssbcollege.edu.in/assets/images/logo.png" alt="">
+</div>
+<mat-divider></mat-divider>
+<mat-card>
+   <mat-card-content>
+
+<div class="lineChart">
+   <ejs-chart id="chart-container" [primaryXAxis]='primaryXAxis' [legendSettings]='legendSettings' [tooltip]='tooltip' [title]='titleLine'>
+      <e-series-collection>
+          <e-series [dataSource]='lineData' type='Line' xName='department' yName='s' name='Students'></e-series>
+      </e-series-collection>
+  </ejs-chart>
+</div>
+
+      <div class="chart">
+         <div class="chart1"><ejs-accumulationchart [title]="chart1Titile" [tooltip]="tooltipSetting" >
+            <e-accumulation-series-collection>
+                <e-accumulation-series [dataSource]="gender"  xName='gender' yName='s' radius="100%" [dataLabel]="chartLabel" innerRadius="40%"></e-accumulation-series>
+            </e-accumulation-series-collection>
+         </ejs-accumulationchart></div>
+      
+         <div class="chart2"><ejs-accumulationchart [title]="chart2Titile" [tooltip]="tooltipSetting" >
+            <e-accumulation-series-collection>
+                <e-accumulation-series [dataSource]="data"  xName='position' yName='s' radius="100%" [dataLabel]="chartLabel" innerRadius="40%"></e-accumulation-series>
+            </e-accumulation-series-collection>
+         </ejs-accumulationchart></div>
+      </div>
+   </mat-card-content>
+</mat-card>
+ 
+ 
+ <br>
+<!--footer-->
+
+<br> &nbsp;
+<p class="Footer" align="center">&copy; SSB 2021</p>

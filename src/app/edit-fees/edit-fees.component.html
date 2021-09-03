@@ -1,0 +1,71 @@
+<mat-dialog-content>
+    <form #formData="ngForm" (ngSubmit)="formSbmit(formData)">
+    <mat-grid-list cols="3" rowHeight="100px">
+        <mat-grid-tile>
+            <mat-form-field appearance="outline">
+              <mat-label>Sem 1 Fees Payed</mat-label>
+              <input  [(ngModel)]="fees1"  name="fees1"  matInput type="text">
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <mat-form-field appearance="outline">
+              <mat-label>Sem 2 Fees payed</mat-label>
+              <input  [(ngModel)]="fees2"  name="fees2"   matInput type="text">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field appearance="outline">
+              <mat-label>Sem 3 Fees payed</mat-label>
+              <input  [(ngModel)]="fees3"  name="fees3" matInput type="text">
+            </mat-form-field>
+          </mat-grid-tile>
+
+
+          <mat-grid-tile>
+            <mat-form-field appearance="outline">
+              <mat-label>Sem 4 Fees payed</mat-label>
+              <input  [(ngModel)]="fees4"  name="fees4"  matInput type="text">
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <mat-form-field appearance="outline">
+              <mat-label>Sem 5 Fees payed</mat-label>
+              <input  [(ngModel)]="fees5" name="fees5"   matInput type="text">
+            </mat-form-field>
+          </mat-grid-tile>
+
+
+          <mat-grid-tile>
+            <mat-form-field appearance="outline">
+              <mat-label>Sem 6 Fees payed</mat-label>
+              <input  [(ngModel)]="fees6"  name="fees6"   matInput type="text">
+            </mat-form-field>
+          </mat-grid-tile>
+
+
+          
+          <mat-grid-tile>
+            <mat-form-field appearance="outline">
+              <mat-label>Today Date</mat-label>
+              <input  [(ngModel)]="updatedDateDate"  name="date"   matInput type="date">
+            </mat-form-field>
+          </mat-grid-tile>
+
+
+          <mat-grid-tile>
+            <button type="submit" class="saveBtn" mat-raised-button>Save</button>
+      
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <button type="button" class="cancelBtn" mat-raised-button mat-dialog-close>Cancel</button>
+
+        </mat-grid-tile>
+
+</mat-grid-list>
+<input hidden type="text"  [(ngModel)]="id" name="id" id="">
+
+</form>
+</mat-dialog-content>

@@ -1,0 +1,96 @@
+<h2>
+    <mat-icon class="topIcon">visibility</mat-icon> View Staff
+</h2>
+<mat-card class="card">
+    <mat-card-content>
+<mat-form-field appearance="outline">
+    <mat-label>Enter Staff Name</mat-label>
+    <input (keyup)="getStaff()" matInput autocomplete="off" [(ngModel)]="name" type="text" name="" id="">
+</mat-form-field>
+<button (click)="viewAll()" mat-icon-button  matTooltip="view all staff">  <mat-icon>arrow_drop_down</mat-icon></button>
+
+<div class="dataBox" *ngFor="let array of array;let i=index">
+    <mat-card><mat-card-content>
+    <h2>{{array.name}} {{array.department}} staff Record</h2>
+<mat-grid-list cols="4" rowHeight="100px">
+    <mat-grid-tile><img width="100px" height="100px" [src]="sanitizer.bypassSecurityTrustResourceUrl(array.staffImage)" alt=""></mat-grid-tile>
+    <mat-grid-tile><mat-form-field appearance="outline">
+        <mat-label>Staff Name</mat-label>
+        <input readonly matInput value="{{array.name}}" type="text" name="" id="">
+    </mat-form-field></mat-grid-tile>
+    <mat-grid-tile><mat-form-field appearance="outline">
+        <mat-label>Position</mat-label>
+        <input readonly matInput value="{{array.position}}" type="text" name="" id="">
+    </mat-form-field></mat-grid-tile>
+    <mat-grid-tile><mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input readonly matInput value="{{array.password}}" type="text" name="" id="">
+    </mat-form-field></mat-grid-tile>
+    <mat-grid-tile><mat-form-field appearance="outline">
+        <mat-label>Gender</mat-label>
+        <input readonly matInput value="{{array.gender}}" type="text" name="" id="">
+    </mat-form-field></mat-grid-tile>
+    <mat-grid-tile><mat-form-field appearance="outline">
+        <mat-label>D.O.B</mat-label>
+        <input readonly matInput value="{{array.dob}}" type="text" name="" id="">
+    </mat-form-field></mat-grid-tile>
+
+    <mat-grid-tile><mat-form-field appearance="outline">
+        <mat-label>Handling Department</mat-label>
+        <input readonly matInput value="{{array.department}}" type="text" name="" id="">
+    </mat-form-field></mat-grid-tile>
+    
+    <mat-grid-tile><mat-form-field appearance="outline">
+        <mat-label>Phone No</mat-label>
+        <input readonly matInput value="{{array.phoneNo}}" type="text" name="" id="">
+    </mat-form-field></mat-grid-tile>
+
+    
+
+    <mat-grid-tile><mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input readonly matInput value="{{array.email}}" type="text" name="" id="">
+    </mat-form-field></mat-grid-tile>
+    
+
+    <mat-grid-tile><mat-form-field appearance="outline">
+        <mat-label>Blood Group</mat-label>
+        <input readonly matInput value="{{array.bloodGroup}}" type="text" name="" id="">
+    </mat-form-field></mat-grid-tile>
+
+    <mat-grid-tile><mat-form-field appearance="outline">
+        <mat-label>Address</mat-label>
+        <input readonly matInput value="{{array.address}}" type="text" name="" id="">
+    </mat-form-field></mat-grid-tile>
+
+    <mat-grid-tile><mat-form-field appearance="outline">
+        <mat-label>City</mat-label>
+        <input readonly matInput value="{{array.city}}" type="text" name="" id="">
+    </mat-form-field></mat-grid-tile>
+
+
+
+    <mat-grid-tile><mat-form-field appearance="outline">
+        <mat-label>Joined Year</mat-label>
+        <input readonly matInput value="{{array.joinedYear}}" type="text" name="" id="">
+    </mat-form-field></mat-grid-tile>
+
+    
+     
+    <mat-grid-tile> </mat-grid-tile>
+
+<mat-grid-tile>
+    <button matTooltip="edit" color='primary' (click)="edit(array._id)" mat-button><mat-icon>edit</mat-icon></button>
+</mat-grid-tile>
+<mat-grid-tile>
+    <button  matTooltip="delete forever" color="warn" (click)="delete(array._id)"  mat-button><mat-icon>delete_forever</mat-icon></button>
+</mat-grid-tile>
+</mat-grid-list>
+<mat-divider></mat-divider>
+</mat-card-content></mat-card>
+</div>
+ <!--footer-->
+ </mat-card-content>
+ </mat-card>
+ <br> &nbsp;
+<p class="Footer" align="center">&copy; SSB 2021</p>

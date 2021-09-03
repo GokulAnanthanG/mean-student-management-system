@@ -1,0 +1,230 @@
+<h2>
+    <mat-icon class="topIcon">visibility</mat-icon> View Mark
+</h2>
+<mat-card class="card">
+    <mat-card-content>
+        <mat-form-field appearance="outline">
+            <mat-label>Enter Student Registration No</mat-label>
+            <input (keyup)="getMark($event)" matInput autocomplete="off"   type="text" name="" id="">
+        </mat-form-field>
+        <button (click)="viewAll()" mat-icon-button  matTooltip="view all staff">  <mat-icon>arrow_drop_down</mat-icon></button>
+<mat-divider></mat-divider>
+
+<div class="mark" *ngFor="let mark of array ;let i=index">
+    <mat-grid-list cols="6" rowHeight="100px">
+
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Student Registration No</mat-label>
+             <input readonly value="{{mark.regNo}}"   matInput    type="text"  >
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Student Name</mat-label>
+            <input  readonly value="{{mark.studentName}}"   matInput type="text"  >
+          </mat-form-field>
+        </mat-grid-tile>
+  
+
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Department</mat-label>
+            <mat-select   readonly value="{{mark.department}}">
+              <mat-option value="BCA">BCA</mat-option>
+              <mat-option value="BSC(IT)">BSc(IT)</mat-option>
+              <mat-option value="BSc(Maths)">BSc(Maths)</mat-option>
+              <mat-option value="BBA">BBA</mat-option>
+              <mat-option value="B.Com">B.Com</mat-option>
+              <mat-option value="M.Com">M.Com</mat-option>
+
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Semester</mat-label>
+            <mat-select   readonly value="{{mark.sem}}">
+              <mat-option value="I">I</mat-option>
+              <mat-option value=" II "> II</mat-option>
+              <mat-option value="III">III</mat-option>
+              <mat-option value="IV">IV</mat-option>
+              <mat-option value="V">V</mat-option>
+              <mat-option value="VI">VI</mat-option>
+              </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+       
+
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Exam Type</mat-label>
+            <input  readonly value="{{mark.examType}}"    matInput type="text" >
+          </mat-form-field>
+        </mat-grid-tile>
+
+
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Date</mat-label>
+            <input readonly value="{{mark.date}}"    matInput type="date"  >
+          </mat-form-field>
+        </mat-grid-tile>
+
+      </mat-grid-list>
+
+      <mat-divider></mat-divider>
+<mat-grid-list cols="2" rowHeight="100px">
+<mat-grid-tile>
+    <mat-form-field>
+        <mat-label>Subject  </mat-label>
+        <input  matInput autocomplete="off" readonly value="{{mark.subjectNames[0]}}"  type="text" name="" id="">
+    </mat-form-field>
+</mat-grid-tile>
+
+
+
+<mat-grid-tile>
+    <mat-form-field>
+        <mat-label>Mark</mat-label>
+        <input  matInput autocomplete="off" readonly  value="{{mark.mark[0]}}"  type="text" name="" id="">
+    </mat-form-field>
+</mat-grid-tile>
+
+
+<mat-grid-tile>
+    <mat-form-field>
+        <mat-label>Subject  </mat-label>
+        <input  matInput autocomplete="off" readonly value="{{mark.subjectNames[1]}}"  type="text" name="" id="">
+    </mat-form-field>
+</mat-grid-tile>
+
+
+
+<mat-grid-tile>
+    <mat-form-field>
+        <mat-label>Mark</mat-label>
+        <input  matInput autocomplete="off" readonly  value="{{mark.mark[1]}}"  type="text" name="" id="">
+    </mat-form-field>
+</mat-grid-tile>
+
+
+<mat-grid-tile>
+    <mat-form-field>
+        <mat-label>Subject  </mat-label>
+        <input  matInput autocomplete="off" readonly value="{{mark.subjectNames[2]}}"  type="text" name="" id="">
+    </mat-form-field>
+</mat-grid-tile>
+
+
+
+<mat-grid-tile>
+    <mat-form-field>
+        <mat-label>Mark</mat-label>
+        <input  matInput autocomplete="off" readonly  value="{{mark.mark[2]}}"  type="text" name="" id="">
+    </mat-form-field>
+</mat-grid-tile>
+
+
+<mat-grid-tile>
+    <mat-form-field>
+        <mat-label>Subject  </mat-label>
+        <input  matInput autocomplete="off" readonly value="{{mark.subjectNames[3]}}"  type="text" name="" id="">
+    </mat-form-field>
+</mat-grid-tile>
+
+
+
+<mat-grid-tile>
+    <mat-form-field>
+        <mat-label>Mark</mat-label>
+        <input  matInput autocomplete="off" readonly  value="{{mark.mark[3]}}"  type="text" name="" id="">
+    </mat-form-field>
+</mat-grid-tile>
+
+
+<mat-grid-tile>
+    <mat-form-field>
+        <mat-label>Subject  </mat-label>
+        <input  matInput autocomplete="off" readonly value="{{mark.subjectNames[4]}}"  type="text" name="" id="">
+    </mat-form-field>
+</mat-grid-tile>
+
+
+
+<mat-grid-tile>
+    <mat-form-field>
+        <mat-label>Mark</mat-label>
+        <input  matInput autocomplete="off" readonly  value="{{mark.mark[4]}}"  type="text" name="" id="">
+    </mat-form-field>
+</mat-grid-tile>
+
+
+<mat-grid-tile>
+    <mat-form-field>
+        <mat-label>Subject  </mat-label>
+        <input  matInput autocomplete="off" readonly value="{{mark.subjectNames[5]}}"  type="text" name="" id="">
+    </mat-form-field>
+</mat-grid-tile>
+
+
+
+<mat-grid-tile>
+    <mat-form-field>
+        <mat-label>Mark</mat-label>
+        <input  matInput autocomplete="off" readonly  value="{{mark.mark[5]}}"  type="text" name="" id="">
+    </mat-form-field>
+</mat-grid-tile>
+
+<mat-grid-tile>
+    <mat-form-field>
+        <mat-label>Subject  </mat-label>
+        <input  matInput autocomplete="off" readonly value="{{mark.subjectNames[6]}}"  type="text" name="" id="">
+    </mat-form-field>
+</mat-grid-tile>
+
+
+
+<mat-grid-tile>
+    <mat-form-field>
+        <mat-label>Mark</mat-label>
+        <input  matInput autocomplete="off" readonly  value="{{mark.mark[6]}}"  type="text" name="" id="">
+    </mat-form-field>
+</mat-grid-tile>
+
+
+<mat-grid-tile>
+    <mat-form-field>
+        <mat-label>Subject  </mat-label>
+        <input  matInput autocomplete="off" readonly value="{{mark.subjectNames[7]}}"  type="text" name="" id="">
+    </mat-form-field>
+</mat-grid-tile>
+
+
+
+<mat-grid-tile>
+    <mat-form-field>
+        <mat-label>Mark</mat-label>
+        <input  matInput autocomplete="off" readonly  value="{{mark.mark[7]}}"  type="text" name="" id="">
+    </mat-form-field>
+</mat-grid-tile>
+
+</mat-grid-list>
+<mat-grid-list cols="3" rowHeight="70px">
+<mat-grid-tile>
+ </mat-grid-tile>
+ <mat-grid-tile>
+</mat-grid-tile>
+<mat-grid-tile>
+    <button matTooltip="edit" color='primary' (click)="edit(mark._id)" mat-button><mat-icon>edit</mat-icon></button>
+ &nbsp;    <button  matTooltip="delete forever" color="warn" (click)="delete(mark._id)"  mat-button><mat-icon>delete_forever</mat-icon></button>
+
+</mat-grid-tile>
+</mat-grid-list>
+<mat-divider></mat-divider>
+</div>
+    </mat-card-content>
+</mat-card> 
+<br> &nbsp;
+<p class="Footer" align="center">&copy; SSB 2021</p>

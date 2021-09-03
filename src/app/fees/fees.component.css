@@ -1,0 +1,27 @@
+mat-form-field{
+    width: 70%;
+  }
+   
+  tr td {
+      padding: 50px;
+  }
+   
+  
+  h2{
+      font-family: 'Roboto Slab', serif;
+  }
+  label{
+     color: rgba(0, 0, 0, 0.705);
+   }
+   .NoOfSubject{
+    width: 50%;
+
+   }
+   mat-card{
+    height: 410px;
+    overflow: auto;
+}
+.toolBar{
+    margin-top: 0;
+}
+ 

@@ -1,0 +1,148 @@
+<mat-dialog-content>
+    <form #formData="ngForm" (ngSubmit)="formSubmit(formData)">
+    <mat-grid-list cols="2" rowHeight="100px">
+        <span>{{mark.studentName}} {{mark.department}} {{mark.sem}} {{mark.examType}} mark {{mark.date}} </span>
+        <mat-grid-tile>
+            <mat-form-field>
+                <mat-label>Subject  </mat-label>
+                <input  matInput autocomplete="off" readonly value="{{mark.subjectNames[0]}}"  type="text" name="" id="">
+            </mat-form-field>
+        </mat-grid-tile>
+        
+        
+        
+        <mat-grid-tile>
+            <mat-form-field>
+                <mat-label>Mark</mat-label>
+                <input  matInput autocomplete="off"      [(ngModel)]="subject1mark"  type="text" name="subject1mark" id="">
+            </mat-form-field>
+        </mat-grid-tile>
+        
+        
+        <mat-grid-tile>
+            <mat-form-field>
+                <mat-label>Subject  </mat-label>
+                <input  matInput autocomplete="off" readonly value="{{mark.subjectNames[1]}}"  type="text" name="" id="">
+            </mat-form-field>
+        </mat-grid-tile>
+        
+        
+        
+        <mat-grid-tile>
+            <mat-form-field>
+                <mat-label>Mark</mat-label>
+                <input  matInput autocomplete="off"     [(ngModel)]="subject2mark" type="text" name="subject2mark" id="">
+            </mat-form-field>
+        </mat-grid-tile>
+        
+        
+        <mat-grid-tile>
+            <mat-form-field>
+                <mat-label>Subject  </mat-label>
+                <input  matInput autocomplete="off" readonly value="{{mark.subjectNames[2]}}"  type="text" name="" id="">
+            </mat-form-field>
+        </mat-grid-tile>
+        
+        
+        
+        <mat-grid-tile>
+            <mat-form-field>
+                <mat-label>Mark</mat-label>
+                <input  matInput autocomplete="off"     [(ngModel)]="subject3mark"  type="text" name="subject3mark" id="">
+            </mat-form-field>
+        </mat-grid-tile>
+        
+        
+        <mat-grid-tile>
+            <mat-form-field>
+                <mat-label>Subject  </mat-label>
+                <input  matInput autocomplete="off" readonly value="{{mark.subjectNames[3]}}"  type="text" name="" id="">
+            </mat-form-field>
+        </mat-grid-tile>
+        
+        
+        
+        <mat-grid-tile>
+            <mat-form-field>
+                <mat-label>Mark</mat-label>
+                <input  matInput autocomplete="off"     [(ngModel)]="subject4mark"  type="text" name="subject4mark" id="">
+            </mat-form-field>
+        </mat-grid-tile>
+        
+        
+        <mat-grid-tile>
+            <mat-form-field>
+                <mat-label>Subject  </mat-label>
+                <input  matInput autocomplete="off" readonly value="{{mark.subjectNames[4]}}"  type="text" name="" id="">
+            </mat-form-field>
+        </mat-grid-tile>
+        
+        
+        
+        <mat-grid-tile>
+            <mat-form-field>
+                <mat-label>Mark</mat-label>
+                <input  matInput autocomplete="off"     [(ngModel)]="subject5mark"  type="text" name="subject5mark" id="">
+            </mat-form-field>
+        </mat-grid-tile>
+        
+        
+        <mat-grid-tile>
+            <mat-form-field>
+                <mat-label>Subject  </mat-label>
+                <input  matInput autocomplete="off" readonly value="{{mark.subjectNames[5]}}"  type="text" name="" id="">
+            </mat-form-field>
+        </mat-grid-tile>
+        
+        
+        
+        <mat-grid-tile>
+            <mat-form-field>
+                <mat-label>Mark</mat-label>
+                <input  matInput autocomplete="off"     [(ngModel)]="subject6mark"  type="text" name="subject6mark" id="">
+            </mat-form-field>
+        </mat-grid-tile>
+        
+        <mat-grid-tile>
+            <mat-form-field>
+                <mat-label>Subject  </mat-label>
+                <input  matInput autocomplete="off" readonly value="{{mark.subjectNames[6]}}"  type="text" name="" id="">
+            </mat-form-field>
+        </mat-grid-tile>
+        
+        
+        
+        <mat-grid-tile>
+            <mat-form-field>
+                <mat-label>Mark</mat-label>
+                <input  matInput autocomplete="off"     [(ngModel)]="subject7mark"  type="text" name="subject7mark" id="">
+            </mat-form-field>
+        </mat-grid-tile>
+        
+        
+        <mat-grid-tile>
+            <mat-form-field>
+                <mat-label>Subject  </mat-label>
+                <input  matInput autocomplete="off" readonly value="{{mark.subjectNames[7]}}"  type="text" name="" id="">
+            </mat-form-field>
+        </mat-grid-tile>
+        
+        
+         
+        <mat-grid-tile>
+            <mat-form-field>
+                <mat-label>Mark</mat-label>
+                <input  matInput autocomplete="off"    [(ngModel)]="subject8mark"  type="text" name="subject8mark" id="">
+            </mat-form-field>
+        </mat-grid-tile>
+        
+        <mat-grid-tile>
+            <button type="submit"   class="saveBtn" mat-raised-button>Save</button>
+         </mat-grid-tile>
+         <mat-grid-tile> 
+            <button type="button"   class="cancelBtn" mat-raised-button mat-dialog-close>Cancel</button>
+         </mat-grid-tile>
+
+        </mat-grid-list>
+    </form>
+</mat-dialog-content>

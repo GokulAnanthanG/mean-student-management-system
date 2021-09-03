@@ -1,0 +1,38 @@
+
+h2{
+    font-family: 'Roboto Slab', serif;
+}
+mat-form-field{
+    width: 100%;
+  }
+  
+  .messageContainer{
+    padding: 10px;
+    height: 300px;
+    overflow: auto;
+    background-color: rgb(241, 234, 243);
+  }
+  .commentBox{
+    width: 60%
+  }
+   
+  
+  .student{
+    width: 200px;
+    height: 100px;
+    border-radius: 03%;
+  border: 1.5px solid rgba(132, 0, 255, 0.767);
+ line-height: 30px;
+  }
+ 
+  .student p{
+    margin-top: 13px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 17px;
+    font-weight:  300px;
+  }
+  .comment{
+    font-size:17px ;
+    font-weight:  250px;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }

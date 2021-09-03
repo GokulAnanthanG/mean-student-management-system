@@ -1,0 +1,109 @@
+<h2>
+    <mat-icon class="topIcon">assignment</mat-icon> Add Assignment
+</h2>
+<mat-card>
+    <mat-card-content>
+        <form action="" #formData="ngForm" (ngSubmit)="addAssigment(formData)">
+<mat-form-field class="title">
+    <mat-label>Assigment title</mat-label>
+    <input required matInput ngModel type="text" name="title" id="">
+</mat-form-field>
+ <br>
+
+ <mat-form-field appearance="outline" class="commentBox">
+    <mat-label>description</mat-label>
+  <textarea class="text1area" required ngModel matInput name="description"  cols="40" rows="3"></textarea>
+</mat-form-field>
+
+ <mat-grid-list cols="5" rowHeight="100px">
+
+<mat-grid-tile>
+    <mat-form-field class="title" appearance="outline">
+        <mat-label>Assigment Dew date</mat-label>
+        <input matInput ngModel type="datetime-local" name="due" id="">
+    </mat-form-field>
+</mat-grid-tile>
+    <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Department</mat-label>
+          <mat-select ngModel required ngModel name="department">
+            <mat-option value="BCA">BCA</mat-option>
+            <mat-option value="BSc(IT)">BSc(IT)</mat-option>
+            <mat-option value="BSc(Maths)">BSc(Maths)</mat-option>
+            <mat-option value="BBA">BBA</mat-option>
+            <mat-option value="B.Com">B.Com</mat-option>
+            <mat-option value="M.Com">M.Com</mat-option>
+            
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Semester</mat-label>
+          <mat-select  ngModel  required ngModel name="sem">
+            <mat-option value="I">I</mat-option>
+            <mat-option value=" II "> II</mat-option>
+            <mat-option value="III">III</mat-option>
+            <mat-option value="IV">IV</mat-option>
+            <mat-option value="V">V</mat-option>
+            <mat-option value="VI">VI</mat-option>
+            </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+<mat-grid-tile>
+    <label color="primary" for="file" matTooltip="attach file"><mat-icon>note_added</mat-icon></label> <span>{{fileName}}</span>
+    <input required (change)="fileChange($event)" hidden ngModel  type="file" name="file" id="file">     
+   
+  
+</mat-grid-tile>
+
+<mat-grid-tile>
+    <button  matTooltip="add assigment" mat-button color="primary"><mat-icon>add</mat-icon></button>
+</mat-grid-tile>
+
+</mat-grid-list>
+</form>
+<mat-divider></mat-divider>    
+
+<br>   <div class="messageContainer">
+
+    <h2>
+        Assigments
+
+<div class="warpper" *ngFor="let data of assignmentArray">
+
+  <div class="data-warpper">
+          <mat-grid-list cols="3" rowHeight="100px"> 
+              <mat-grid-tile>{{data.department}}</mat-grid-tile>
+              <mat-grid-tile>{{data.sem}}</mat-grid-tile>
+              <mat-grid-tile matTooltip="assignment due date">{{data.due}}</mat-grid-tile>
+          </mat-grid-list>
+          <mat-grid-list cols="2" rowHeight="200px"> 
+            <mat-grid-tile><p matTooltip="assignment title">{{data.title}}</p></mat-grid-tile>
+             <mat-grid-tile > <p matTooltip="assignment description" align="justify">{{data.description}}</p></mat-grid-tile>
+        </mat-grid-list>
+        <iframe class="responsive-iframe" [src]="sanitizer.bypassSecurityTrustResourceUrl(data.file)"></iframe>
+   <mat-grid-list cols="3" rowHeight="100px">
+     <mat-grid-tile>        
+     </mat-grid-tile>
+     <mat-grid-tile>      <button  matTooltip="View submissions"   mat-raised-button color="accent"><mat-icon>description</mat-icon></button>
+     </mat-grid-tile>
+     <mat-grid-tile>      <button matTooltip="Delete"     mat-raised-button color="warn"><mat-icon>delete_forever</mat-icon></button>
+     </mat-grid-tile>
+   </mat-grid-list>      
+          
+        
+<br>     
+    </div>
+        
+</div>
+
+    </h2>  
+     
+</div>
+</mat-card-content>
+</mat-card>
+<br> &nbsp;
+<p class="Footer" align="center">&copy; SSB 2021</p>

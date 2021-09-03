@@ -1,0 +1,11 @@
+h2{
+    font-family: 'Roboto Slab', serif;
+}
+mat-form-field{
+    width: 70%;
+}
+.card{
+    height: 410px;
+    overflow: auto;
+}
+
